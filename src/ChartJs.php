@@ -99,7 +99,7 @@ class ChartJs extends Widget
             ]
         );
 
-        $js = ";var chartJS_{$id} = new Chart($('#{$id}'),{$config});";
+        $js = ";var chartJS_config_{$id}={$config}; var chartJS_{$id} = new Chart($('#{$id}'),chartJS_config_{$id});";
         $view->registerJs($js);
     }
 }
